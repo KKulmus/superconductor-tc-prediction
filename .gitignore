@@ -1,0 +1,22 @@
+# Daten (zu groß für Git) – ignoriert alle Dateien in data/raw/ und data/processed/
+data/raw/*
+data/processed/*
+
+# Aber: Die .gitkeep-Dateien sollen trotzdem trackt werden!
+# Das Ausrufezeichen kehrt die Ignorier-Regel um
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python-Zwischencode – wird automatisch erzeugt, nicht versionieren
+__pycache__/
+*.py[cod]
+
+# Virtuelle Umgebung – lokal, nicht für Git
+venv/
+
+# Jupyter-Auto-Speicherstände – nervig im Diff
+.ipynb_checkpoints/
+
+# Betriebssystem-Dateien (Mac/Windows)
+.DS_Store
+Thumbs.db
