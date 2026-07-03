@@ -57,7 +57,7 @@ class SuperconductorDataLoader(BaseDataLoader):
         except Exception as e:
             raise ValueError(f"Failed to read CSV: {e}")
         
-        print(f"✓ Loaded {len(self.data)} rows from {self.file_path.name}")
+        print(f"Loaded {len(self.data)} rows from {self.file_path.name}")
         return self.data
     
     def validate(self, df: pd.DataFrame) -> bool:
@@ -72,7 +72,7 @@ class SuperconductorDataLoader(BaseDataLoader):
         """
         # Check for target column
         if 'critical_temp' not in df.columns:
-            print("✗ Missing column: 'critical_temp'")
+            print("Missing column: 'critical_temp'")
             return False
         
         # Check for material/formula column
@@ -83,10 +83,10 @@ class SuperconductorDataLoader(BaseDataLoader):
         # Check for NaN in target
         nan_count = df['critical_temp'].isna().sum()
         if nan_count > 0:
-            print(f"⚠ Warning: {nan_count} NaN values in target variable")
+            print(f"Warning: {nan_count} NaN values in target variable")
             return False
         
-        print("✓ Data validation passed")
+        print("Data validation passed")
         return True
 
 
